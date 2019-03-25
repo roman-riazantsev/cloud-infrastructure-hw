@@ -1,0 +1,17 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: clean-node
+  labels:
+    run: clean-node
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30303
+  selector:
+    run: clean-node
+  clusterIP: 10.97.235.15
+  type: NodePort

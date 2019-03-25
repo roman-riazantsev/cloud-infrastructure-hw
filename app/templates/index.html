@@ -1,0 +1,44 @@
+<html>
+  <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+     <button id="start" type='button'> Calculate Mersenne primes for n < 100000000, 90 times.</button>
+     <button id="stop" type='button'> print result </button>
+     <div id="result"></div>
+  </body>
+  <script>
+   $(document).ready(function() {
+        $("#stop").hide();
+        $("#start").click(function(event){
+            alert("Click OK to start the calculation. When the calculation ends, the output button will appear.")
+            $.ajax({
+                url: "/start",
+                type: "get",
+                success: function(response) {
+                    $("#start").hide();
+                    $("#stop").show();
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            });
+        });
+        $("#stop").click(function(event){
+            // alert("Are you sure?")
+            $.ajax({
+                url: "/stop",
+                type: "get",
+                success: function(response) {
+                    $("#stop").hide();
+                    $("#start").show();
+                    $("#result").html(response);
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            });
+        });
+   });
+  </script>
+</html>
