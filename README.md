@@ -10,7 +10,7 @@ Run a container:
 docker run -p 80:80 romanriazantsev/cloud-infrastructure-hw
 ```
 
-Site was launched at the localhost:80 . By clicking the button, a notification will be displayed asking you to confirm the launch of the calculation. After the calculation is completed, the "print result" button will appear, which, upon click, will write an array of numbers and the number of iterations of the calculation.
+Site was launched at the localhost:80 . By clicking the button, a notification will be displayed asking you to confirm the launch of the calculation. After the calculation is completed, the "print result" button will appear, which, upon click, will write an array of numbers and the number of iterations.
 
 ### Instruction how to run Kubernetes:
 #### (You can run bash.sh to skip this part.)
